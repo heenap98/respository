@@ -1,6 +1,5 @@
 package edu.gatech.oad.antlab.person;
-import java.util.Random;
-
+import java.util.*;
 /**
  *  A simple class for person 2
  *  returns their name and a
@@ -10,6 +9,7 @@ import java.util.Random;
  * @version 1.1
  */
 public class Person2 {
+
     /** Holds the persons real name */
     private String name;
 	 	/**
@@ -18,7 +18,7 @@ public class Person2 {
 	 * @param pname the person's real name
 	 */
 	 public Person2(String pname) {
-         this.name = pname;
+         name = pname;
 	 }
 	/**
 	 * This method should take the string
@@ -32,16 +32,13 @@ public class Person2 {
 	 */
 	private String calc(String input) {
 	  //Person 2 put your implementation here
-        String random = "";
-        Random rgen = new Random();
-        for (int i = 0; i < input.length(); i++) {
-            int randPos = rgen.nextInt(random.length());
-            char rAtI = random.charAt(i);
-            char rAtrndPos = random.charAt(randPos);
-            rAtI = rAtrndPos;
-            char tmp = random.charAt(randPos);
-        }
-        return random;
+      List<String> characters = Arrays.asList(input.split(""));
+      Collections.shuffle(characters);
+      String ret = "";
+      for (String character : characters) {
+        ret += character;
+      }
+      return ret;
 	}
 	/**
 	 * Return a string rep of this object
@@ -54,4 +51,5 @@ public class Person2 {
 	public String toString(String input) {
 	  return name + calc(input);
 	}
+
 }

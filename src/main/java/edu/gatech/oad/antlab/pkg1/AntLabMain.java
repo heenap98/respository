@@ -89,6 +89,7 @@ import edu.gatech.oad.antlab.pkg2.*;
 
     /**
      * entry point for the program
+     * @param args argument from terminal
      */
      public static void main(String[] args) {
 
